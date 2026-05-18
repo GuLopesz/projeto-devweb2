@@ -129,22 +129,146 @@
   border-color: #A2A63C;
 }
 
-/* Cards do explorar */
-.explore-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 25px;
+/*PAGE EXPLORAR ------------------*/
+
+.explore-main-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: sans-serif;
 }
 
-.course-card {
-  background: white;
+/* Controles*/
+.controls-wrapper {
+  background-color: #FCFCF9;
+  padding: 10px;
+  border-radius: 16px;
+  border: 1px solid #EAEAEA;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.explore-title {
+  text-align: center;
+  color: #2D2D2D;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/*Busca */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: 2px solid #D1D1C4;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.search-input:focus {
+  border-color: #A2A63C;
+}
+
+/*Filtros*/
+.filter-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: 8px 18px;
   border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid #f0f0f0;
-  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #D1D1C4;
+  background: white;
+  color: #555;
+  font-weight: 500;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.course-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+.filter-btn.active {
+  background-color: #A2A63C;
+  color: white;
+  border-color: #A2A63C;
+}
+
+/*Listagem dos cursos -----*/
+.explore-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/*Card menu*/
+.course-card {
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  position: relative; 
+}
+
+.card-content {
+  flex: 1;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  height: 130px;
+  box-sizing: border-box;
+}
+
+.btn-conhecer {
+  position: absolute;
+  right: 24px;         
+  top: 50%;           
+  transform: translateY(-50%); 
+  
+  background-color: #A6377F; 
+  color: white; 
+  border: none; 
+  padding: 8px 22px; 
+  border-radius: 20px; 
+  font-weight: 500;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-conhecer:hover {
+  background-color: #852b65; 
+}
+.card-image-wrapper {
+  width: 180px;
+  min-width: 180px;
+  height: 130px;
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Informações*/
+
+
+.card-action-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
