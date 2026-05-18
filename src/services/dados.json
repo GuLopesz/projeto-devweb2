@@ -1,0 +1,98 @@
+{
+    "usuario_logado": {
+      "nome": "nomeUser",
+      "status": "Premium",
+      "proximas_aulas": [
+        {
+          "id": 101,
+          "nome": "Hatha Yoga Restaurativo",
+          "categoria": "Yoga",
+          "horario": "Hoje, 18:00",
+          "instrutor": "Dra. Mariana Luz",
+          "imagem": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400"
+        },
+        {
+          "id": 102,
+          "nome": "Pilates solo: Core e Postura",
+          "categoria": "Pilates solo",
+          "horario": "Amanhã, 08:30",
+          "instrutor": "Carla Vieira",
+          "imagem": "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=400"
+        }
+      ]
+    },
+    "catalogo_explorar": [
+      {
+        "id": 1,
+        "nome": "Vinyasa Flow Energizante",
+        "categoria": "Yoga",
+        "instrutor": "Mariana Luz",
+        "duracao": "60 min",
+        "nivel": "Intermediário",
+        "imagem": "https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&fit=crop&w=400"
+      },
+      {
+        "id": 2,
+        "nome": "Meditação Mindfulness: Foco",
+        "categoria": "Meditação",
+        "instrutor": "Pedro Santos",
+        "duracao": "15 min",
+        "nivel": "Iniciante",
+        "imagem": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=400"
+      },
+      {
+        "id": 3,
+        "nome": "Pilates Solo: Fortalecimento",
+        "categoria": "Pilates solo",
+        "instrutor": "Carla Vieira",
+        "duracao": "30 min",
+        "nivel": "Todos",
+        "imagem": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=400"
+      },
+      {
+        "id": 4,
+        "nome": "Planejamento Alimentar Semanal",
+        "categoria": "Orientação nutricional",
+        "instrutor": "Dr. Ricardo Lima",
+        "duracao": "50 min",
+        "nivel": "Consultoria",
+        "imagem": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=400"
+      },
+      {
+        "id": 5,
+        "nome": "Ashtanga para Manhã",
+        "categoria": "Yoga",
+        "instrutor": "Beatriz Arantes",
+        "duracao": "40 min",
+        "nivel": "Avançado",
+        "imagem": "https://images.unsplash.com/photo-1506126279646-a6602b703d83?auto=format&fit=crop&w=400"
+      },
+      {
+        "id": 6,
+        "nome": "Alimentação Intuitiva",
+        "categoria": "Orientação nutricional",
+        "instrutor": "Nutri Sofia Mendes",
+        "duracao": "45 min",
+        "nivel": "Iniciante",
+        "imagem": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=400"
+      },
+      {
+        "id": 7,
+        "nome": "Meditação para Dormir Melhor",
+        "categoria": "Meditação",
+        "instrutor": "Mestre Zen Hiroshi",
+        "duracao": "20 min",
+        "nivel": "Todos",
+        "imagem": "https://images.unsplash.com/photo-1512438248408-1769a73e357c?auto=format&fit=crop&w=400"
+      },
+      {
+        "id": 8,
+        "nome": "Pilates: Mobilidade de Coluna",
+        "categoria": "Pilates solo",
+        "instrutor": "Roberto Justos",
+        "duracao": "25 min",
+        "nivel": "Intermediário",
+        "imagem": "https://images.unsplash.com/photo-1591343395082-e120087004b4?auto=format&fit=crop&w=400"
+      }
+    ]
+  }
