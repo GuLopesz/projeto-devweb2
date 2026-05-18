@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import logoImg from '../assets/logoMenu.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,9 +8,13 @@ const Header = () => {
   return (
     <header className="header-alivvi">
 
-      <div style={{ color: '#A6377F', fontSize: '1.6rem', fontWeight: 'bold' }}>
-        alivvi
-      </div>
+      <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
+        <img 
+          src={logoImg} 
+          alt="Alivvi Logo" 
+          style={{ height: '50px', width: 'auto', objectFit: 'contain' }} 
+        />
+      </Link>
 
       <nav style={{ display: 'flex', gap: '25px' }}>
         <Link to="/" className="nav-link-main">Início</Link>
