@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Explorar from './pages/Explorar';
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Landing from "./pages/Landing";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/explorar" element={<Explorar />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/landing" element={<Landing />} />
         </Routes>
       </main>
     </Router>
