@@ -40,7 +40,7 @@ function Login() {
       `Bem vindo, ${foundUser.name}!`
     );
 
-    navigate("/");
+    navigate("/home");
   }
 
   return (

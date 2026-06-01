@@ -13,14 +13,13 @@ import Questionario from "./pages/Questionario";
 function App() {
   return (
     <Router>
-      <Header />
       <main style={{ minHeight: '80vh' }}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/explorar" element={<Explorar />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/landing" element={<Landing />} />
           <Route path="/profile" element={<Profile />}/>
           <Route path="/questionario" element={<Questionario />} />
         </Routes>

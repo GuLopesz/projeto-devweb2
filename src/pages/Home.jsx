@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import dados from '../services/dados.json';
+import Header from '../components/Header';
+
 
 const Home = () => {
   const [aulas, setAulas] = useState([]);
@@ -11,6 +13,8 @@ const Home = () => {
   }, []);
 
   return (
+    <>
+      <Header />
     <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '40px 20px' }}>
       {/* Boas-vindas */}
       <section style={{ marginBottom: '40px' }}>
@@ -66,6 +70,7 @@ const Home = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

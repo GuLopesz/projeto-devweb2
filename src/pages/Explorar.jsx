@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import dados from '../services/dados.json';
 import '../App.css';
 import '../index.css';
+import Header from '../components/Header';
+
 
 const Explorar = () => {
   const [busca, setBusca] = useState('');
@@ -29,6 +31,8 @@ const Explorar = () => {
   }, [busca, catAtiva]);
 
   return (
+    <>
+      <Header />
     <div className="explore-main-container">
       
       {/*Controles*/}
@@ -110,6 +114,7 @@ const Explorar = () => {
         )}
       </div>
     </div>
+  </>
   );
 };
 
