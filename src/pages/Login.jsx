@@ -86,7 +86,7 @@ function Login() {
             Ainda nao tem uma conta?
             <Link to="/register">
               {" "}
-              Register
+              Cadastro
             </Link>
           </p>
         </div>

@@ -7,6 +7,7 @@ import Explorar from './pages/Explorar';
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Landing from "./pages/Landing";
+import Profile from "./pages/Profile";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/landing" element={<Landing />} />
+          <Route path="/profile" element={<Profile />}/>
         </Routes>
       </main>
     </Router>

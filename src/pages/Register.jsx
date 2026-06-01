@@ -74,7 +74,7 @@ function Register() {
   return (
     <div className="register-page">
       <div className="register-container">
-        <h1>Create Account</h1>
+        <h1>Criar Conta</h1>
 
         <form
           className="register-form"
@@ -114,13 +114,13 @@ function Register() {
           )}
 
           <button type="submit">
-            Register
+            Cadastrar
           </button>
         </form>
 
         <div className="register-footer">
           <p>
-            Already have an account?
+            Ja tem uma conta?
             <Link to="/login"> Login</Link>
           </p>
         </div>

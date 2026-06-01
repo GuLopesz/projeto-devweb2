@@ -34,7 +34,7 @@ const Header = () => {
 
         {isOpen && (
           <div className="dropdown-menu">
-            <div className="dropdown-item"><span>Meu perfil</span> <span style={{color: '#A6377F'}}>›</span></div>
+            <Link to="/profile" className="dropdown-item"><span>Meu perfil</span><span style={{ color: '#A6377F' }}>›</span></Link>
             <div className="dropdown-item"><span>Meus resultados</span> <span style={{color: '#A6377F'}}>›</span></div>
             <div className="dropdown-item"><span>Meu histórico</span> <span style={{color: '#A6377F'}}>›</span></div>
             <div className="dropdown-item"><span>Indicações</span> <span style={{color: '#A6377F'}}>›</span></div>
