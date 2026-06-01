@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import dados from '../services/dados.json';
 
 const Home = () => {
@@ -27,7 +28,7 @@ const Home = () => {
           <h2 style={{ margin: '0 0 10px 0' }}>Questionário de Acolhimento</h2>
           <p style={{ margin: 0, opacity: 0.9 }}>Responda algumas perguntas para encontrarmos a prática ideal para o seu momento.</p>
         </div>
-        <button className="btn-primary" style={{ backgroundColor: 'var(--alivvi-purple)' }}>Iniciar</button>
+        <Link to="/questionario" className="btn-primary" style={{ backgroundColor: 'var(--alivvi-purple)' }} >Iniciar</Link>
       </div>
 
       {/* Atalhos*/}
