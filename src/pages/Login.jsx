@@ -1,16 +1,80 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 import "../styles/login.css";
 
 function Login() {
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] =
+    useState("");
+
+  const [error, setError] = useState("");
+
+  function handleLogin(event) {
+    event.preventDefault();
+
+    const users =
+      JSON.parse(localStorage.getItem("users")) || [];
+
+    const foundUser = users.find(
+      (user) =>
+        user.email === email &&
+        user.password === password
+    );
+
+    if (!foundUser) {
+      setError("Email ou senha invalidos.");
+      return;
+    }
+
+    localStorage.setItem(
+      "currentUser",
+      JSON.stringify(foundUser)
+    );
+
+    setError("");
+
+    alert(
+      `Bem vindo, ${foundUser.name}!`
+    );
+
+    navigate("/");
+  }
+
   return (
     <div className="login-page">
       <div className="login-container">
         <h1>Bem vindo</h1>
 
-        <form className="login-form">
-          <input type="email" placeholder="Email" />
+        <form
+          className="login-form"
+          onSubmit={handleLogin}
+        >
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(event) =>
+              setEmail(event.target.value)
+            }
+          />
 
-          <input type="password" placeholder="Senha" />
+          <input
+            type="password"
+            placeholder="Senha"
+            value={password}
+            onChange={(event) =>
+              setPassword(event.target.value)
+            }
+          />
+
+          {error && (
+            <p className="error-message">
+              {error}
+            </p>
+          )}
 
           <button type="submit">
             Login
@@ -19,9 +83,10 @@ function Login() {
 
         <div className="login-footer">
           <p>
-            Ainda não tem uma conta?
+            Ainda nao tem uma conta?
             <Link to="/register">
-              {" "}Cadastro
+              {" "}
+              Register
             </Link>
           </p>
         </div>

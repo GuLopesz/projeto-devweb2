@@ -113,3 +113,10 @@
   .login-footer a:hover {
     opacity: 0.8;
   }
+
+  .error-message {
+    color: #A6377F;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+  }
