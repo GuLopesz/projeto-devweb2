@@ -8,7 +8,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Landing from "./pages/Landing";
 import Profile from "./pages/Profile";
-
+import Questionario from "./pages/Questionario";
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/landing" element={<Landing />} />
           <Route path="/profile" element={<Profile />}/>
+          <Route path="/questionario" element={<Questionario />} />
         </Routes>
       </main>
     </Router>
