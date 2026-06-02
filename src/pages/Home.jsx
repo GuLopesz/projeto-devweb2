@@ -1,24 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import dados from '../services/dados.json';
-import Header from '../components/Header';
-
 
 const Home = () => {
   const [aulas, setAulas] = useState([]);
-  const usuario = "nomeUser";
+  const [usuario, setUsuario] = useState('');
 
   useEffect(() => {
+    // Carrega as aulas do JSON
     setAulas(dados.usuario_logado.proximas_aulas);
+
+    // Busca o usuário logado no cache do navegador
+    const userCache = localStorage.getItem('currentUser');
+    if (userCache) {
+      const parsedUser = JSON.parse(userCache);
+      setUsuario(parsedUser.name);
+    }
   }, []);
 
   return (
-    <>
-      <Header />
     <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '40px 20px' }}>
       {/* Boas-vindas */}
       <section style={{ marginBottom: '40px' }}>
-        <h1 style={{ color: 'var(--alivvi-olive)', fontSize: '2.2rem' }}>Olá, {usuario}!</h1>
+        <h1 style={{ color: 'var(--alivvi-olive)', fontSize: '2.2rem' }}>
+          Olá, {usuario || 'Visitante'}!
+        </h1>
         <p style={{ color: '#666' }}>Sua jornada de bem-estar começa agora.</p>
       </section>
 
@@ -70,7 +76,6 @@ const Home = () => {
         ))}
       </div>
     </div>
-    </>
   );
 };
 

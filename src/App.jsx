@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Footer from './components/Footer';
+import Footer from './components/Footer'; 
 import Home from './pages/Home';
 import Explorar from './pages/Explorar';
 import Login from "./pages/Login";
@@ -13,6 +13,8 @@ import Questionario from "./pages/Questionario";
 function App() {
   return (
     <Router>
+      <Header />
+      
       <main style={{ minHeight: '80vh' }}>
         <Routes>
           <Route path="/" element={<Landing />} />
@@ -24,6 +26,7 @@ function App() {
           <Route path="/questionario" element={<Questionario />} />
         </Routes>
       </main>
+      <Footer />
     </Router>
   );
 }

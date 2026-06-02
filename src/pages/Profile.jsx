@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "../styles/profile.css";
-import Header from '../components/Header';
 
 
 function Profile() {
@@ -35,7 +34,6 @@ function Profile() {
 
   return (
     <>
-      <Header />
     <div className="profile-page">
       <div className="profile-card">
         <div className="profile-avatar">

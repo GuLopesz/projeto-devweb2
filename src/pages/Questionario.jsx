@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Header from '../components/Header';
-
 
 const Questionario = () => {
   const [passo, setPasso] = useState(0);
@@ -126,7 +124,6 @@ const Questionario = () => {
 
   return (
     <>
-      <Header />
     <div className="explore-main-container">
       
       {/*PERGUNTAS */}
