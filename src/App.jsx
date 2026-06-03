@@ -11,6 +11,7 @@ import Landing from "./pages/Landing";
 import Profile from "./pages/Profile";
 import Questionario from "./pages/Questionario";
 import Sobre from './pages/Sobre';
+import Historias from './pages/Historias';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/profile" element={<Profile />}/>
           <Route path="/questionario" element={<Questionario />} />
           <Route path="/sobre" element={<Sobre />} />
+          <Route path="/historias" element={<Historias />} />
         </Routes>
       </main>
       <Footer />

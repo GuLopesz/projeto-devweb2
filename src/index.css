@@ -137,3 +137,35 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+/* Esconde a barra de rolagem */
+.esconder-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- LÓGICA RESPONSIVA DOS CARDS --- */
+/* Padrão (Celulares): 1 card por vez ocupando 100% do espaço */
+.carrossel-card {
+  flex: 0 0 100%;
+}
+
+/* Tablets: 2 cards por vez */
+@media (min-width: 768px) {
+  .carrossel-card {
+    flex: 0 0 calc(50% - 10px);
+  }
+}
+
+/* Monitores padrão: 3 cards por vez */
+@media (min-width: 1024px) {
+  .carrossel-card {
+    flex: 0 0 calc(33.333% - 13.33px);
+  }
+}
+
+/* Monitores Ultrawide: 4 cards por vez */
+@media (min-width: 1440px) {
+  .carrossel-card {
+    flex: 0 0 calc(25% - 15px);
+  }
+}

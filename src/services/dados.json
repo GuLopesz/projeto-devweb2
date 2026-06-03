@@ -21,6 +21,7 @@
         }
       ]
     },
+
     "catalogo_explorar": [
       {
         "id": 1,
@@ -94,5 +95,78 @@
         "nivel": "Intermediário",
         "imagem": "https://images.unsplash.com/photo-1591343395082-e120087004b4?auto=format&fit=crop&w=400"
       }
-    ]
+    ],
+    
+    "avaliacoes": [
+      {
+        "id": 1,
+        "nome": "Mariana Silva",
+        "aula": "Yoga Restaurativo",
+        "estrelas": 5,
+        "comentario": "Incrível! As minhas dores nas costas sumiram depois de um mês de prática constante. A plataforma é muito fácil de usar."
+      },
+      {
+        "id": 2,
+        "nome": "Carlos Mendes",
+        "aula": "Meditação para Ansiedade",
+        "estrelas": 5,
+        "comentario": "Mudou a minha rotina de sono. Consigo me desligar do trabalho muito mais rápido agora. Recomendo para todos!"
+      },
+      {
+        "id": 3,
+        "nome": "Fernanda Costa",
+        "aula": "Pilates Solo Iniciante",
+        "estrelas": 4,
+        "comentario": "A instrutora é maravilhosa e super atenciosa. Só queria que as aulas tivessem um pouco mais de tempo de duração."
+      },
+      {
+        "id": 4,
+        "nome": "Ricardo Almeida",
+        "aula": "Consultoria Nutricional",
+        "estrelas": 5,
+        "comentario": "Não é uma dieta restritiva, é reeducação de verdade. Sinto minha energia muito mais estável ao longo do dia."
+      },
+      {
+        "id": 5,
+        "nome": "Juliana Rocha",
+        "aula": "Pilates Avançado",
+        "estrelas": 5,
+        "comentario": "Desafiador e revigorante. Sinto meu corpo muito mais forte e flexível, o nível das aulas é excelente."
+      },
+      {
+        "id": 6,
+        "nome": "Thiago Martins",
+        "aula": "Mindfulness no Trabalho",
+        "estrelas": 5,
+        "comentario": "Pausas curtas que salvam meu dia. Minha produtividade e foco aumentaram absurdamente desde que comecei."
+      },
+      {
+        "id": 7,
+        "nome": "Camila Barros",
+        "aula": "Vinyasa Flow Yoga",
+        "estrelas": 5,
+        "comentario": "As transições são fluidas e o ritmo é perfeito. Termino a prática suando e com a mente super leve."
+      },
+      {
+        "id": 8,
+        "nome": "Roberto Lima",
+        "aula": "Nutrição Intuitiva",
+        "estrelas": 4,
+        "comentario": "Ótimas dicas práticas para o dia a dia. Só demorei um pouquinho para me adaptar à nova rotina de compras, mas valeu a pena."
+      },
+      {
+        "id": 9,
+        "nome": "Amanda Nunes",
+        "aula": "Yoga Despertar",
+        "estrelas": 5,
+        "comentario": "A melhor maneira de começar o dia. Acordo muito mais disposta, sem aquela preguiça matinal. O site é muito rápido."
+      },
+      {
+        "id": 10,
+        "nome": "Felipe Gomes",
+        "aula": "Pilates para Postura",
+        "estrelas": 5,
+        "comentario": "Trabalho em home office e minha coluna estava me matando. O Alivvi foi a solução perfeita para as dores na lombar."
+      }
+    ]    
   }
