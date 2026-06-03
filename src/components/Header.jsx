@@ -36,7 +36,7 @@ const Header = () => {
         />
       </Link>
 
-      <nav style={{ display: 'flex', gap: '25px' }}>
+      <nav style={{ display: 'flex', gap: '25px', position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
         <Link to="/" className="nav-link-main">Início</Link>
         <Link to="/explorar" className="nav-link-main">Explorar</Link>
       </nav>
