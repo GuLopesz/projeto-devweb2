@@ -9,6 +9,7 @@ import Register from "./pages/Register";
 import Landing from "./pages/Landing";
 import Profile from "./pages/Profile";
 import Questionario from "./pages/Questionario";
+import Sobre from './pages/Sobre';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />}/>
           <Route path="/questionario" element={<Questionario />} />
+          <Route path="/sobre" element={<Sobre />} />
         </Routes>
       </main>
       <Footer />
