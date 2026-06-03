@@ -133,10 +133,10 @@ const Questionario = () => {
             {/* barra de progresso*/}
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: '#999', marginBottom: '10px' }}>
               <span>Pergunta {passo + 1} de {perguntas.length}</span>
-              <span>{Math.round(((passo + 1) / perguntas.length) * 100)}% concluído</span>
+              <span>{Math.round(((passo) / perguntas.length) * 100)}% concluído</span>
             </div>
             <div style={{ width: '100%', height: '4px', background: '#EAEAEA', borderRadius: '2px', marginBottom: '30px' }}>
-              <div style={{ width: `${((passo + 1) / perguntas.length) * 100}%`, height: '100%', background: '#A2A63C', borderRadius: '2px', transition: '0.3s' }}></div>
+              <div style={{ width: `${((passo) / perguntas.length) * 100}%`, height: '100%', background: '#A2A63C', borderRadius: '2px', transition: '0.3s' }}></div>
             </div>
 
             <h3 style={{ fontSize: '1.35rem', color: '#2D2D2D', marginBottom: '25px', fontWeight: '600', lineHeight: '1.4' }}>
