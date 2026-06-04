@@ -12,6 +12,7 @@ import Profile from "./pages/Profile";
 import Questionario from "./pages/Questionario";
 import Sobre from './pages/Sobre';
 import Historias from './pages/Historias';
+import ClassDetail from './pages/ClassDetail';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/questionario" element={<Questionario />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/historias" element={<Historias />} />
+          <Route path="/aula/:id" element={<ClassDetail />} />
         </Routes>
       </main>
       <Footer />
