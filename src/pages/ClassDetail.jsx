@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import Header from '../components/Header';
 import dados from '../services/dados.json';
 
-const ClassDetail = () => {
+const ClassDetail = ({ adicionarReserva, reservas }) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [classData, setClassData] = useState(null);
@@ -16,9 +15,28 @@ const ClassDetail = () => {
       return;
     }
     setClassData(found);
-  }, [id, navigate]);
+
+    const jaReservado = reservas.some(r => r.nome === found.nome);
+    setIsBooked(jaReservado);
+  }, [id, navigate, reservas]);
 
   if (!classData) return null;
+
+  // Lógica botão "Reservar Aula"
+  const handleReservar = () => {
+    const novaReserva = {
+      id: Date.now(), // Gera um ID único simulado para a reserva
+      id_aula: classData.id,
+      nome: classData.nome,
+      categoria: classData.categoria,
+      instrutor: classData.instrutor,
+      horario: "A definir", // Horário padrão, o usuário pode editar
+      imagem: classData.imagem
+    };
+
+    adicionarReserva(novaReserva);
+    setIsBooked(true);
+  };
 
   const infoCards = [
     { label: 'Duração', value: classData.duracao },
@@ -65,7 +83,7 @@ const ClassDetail = () => {
 
         {!isBooked ? (
           <button
-            onClick={() => setIsBooked(true)}
+            onClick={handleReservar}
             style={{
               background: 'var(--alivvi-purple)', color: 'white', border: 'none',
               padding: '16px 40px', borderRadius: '30px', fontSize: '1rem',
@@ -83,8 +101,13 @@ const ClassDetail = () => {
               ✓ Aula reservada com sucesso!
             </p>
             <p style={{ color: '#555', margin: '8px 0 0 0', fontSize: '0.9rem' }}>
-              Você pode acompanhar sua reserva na página inicial.
+              Você pode acompanhar sua reserva em Meu Histórico.
             </p>
+            <button 
+              onClick={() => navigate('/minhas-reservas')}
+              style={{ marginTop: '15px', padding: '8px 20px', borderRadius: '10px', border: '1px solid #16a34a', background: 'transparent', color: '#16a34a', cursor: 'pointer', fontWeight: 'bold' }}>
+              Ver Minhas Reservas
+            </button>
           </div>
         )}
 
