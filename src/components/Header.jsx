@@ -7,9 +7,8 @@ const Header = () => {
   const [currentUser, setCurrentUser] = useState(null);
   
   const navigate = useNavigate();
-  const location = useLocation(); // Rastreador de rotas
+  const location = useLocation();
 
-  // Lê o cache toda vez que a URL muda
   useEffect(() => {
     const userCache = localStorage.getItem('currentUser');
     if (userCache) {
@@ -19,7 +18,6 @@ const Header = () => {
     }
   }, [location]);
 
-  // Limpa o cache e desloga
   const handleLogout = () => {
     localStorage.removeItem('currentUser');
     setCurrentUser(null);
@@ -37,11 +35,13 @@ const Header = () => {
       </Link>
 
       <nav style={{ display: 'flex', gap: '25px', position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
-        <Link to="/home" className="nav-link-main">Início</Link>
+        
+        <Link to={currentUser ? "/home" : "/"} className="nav-link-main">
+          Início
+        </Link>
         <Link to="/explorar" className="nav-link-main">Explorar</Link>
       </nav>
 
-      {/* Renderização Condicional */}
       {currentUser ? (
         <div 
           style={{ position: 'relative', display: 'flex', alignItems: 'center' }}

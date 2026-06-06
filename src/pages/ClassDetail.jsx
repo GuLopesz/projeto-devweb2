@@ -22,15 +22,22 @@ const ClassDetail = ({ adicionarReserva, reservas }) => {
 
   if (!classData) return null;
 
-  // Lógica botão "Reservar Aula"
   const handleReservar = () => {
+    const usuarioLogado = localStorage.getItem('currentUser');
+    
+    if (!usuarioLogado) {
+      alert("Você precisa estar logado para reservar uma aula!");
+      navigate('/login');
+      return;
+    }
+
     const novaReserva = {
-      id: Date.now(), // Gera um ID único simulado para a reserva
+      id: Date.now(),
       id_aula: classData.id,
       nome: classData.nome,
       categoria: classData.categoria,
       instrutor: classData.instrutor,
-      horario: "A definir", // Horário padrão, o usuário pode editar
+      horario: "A definir",
       imagem: classData.imagem
     };
 
@@ -101,7 +108,7 @@ const ClassDetail = ({ adicionarReserva, reservas }) => {
               ✓ Aula reservada com sucesso!
             </p>
             <p style={{ color: '#555', margin: '8px 0 0 0', fontSize: '0.9rem' }}>
-              Você pode acompanhar sua reserva em Meu Histórico.
+              Você pode acompanhar sua reserva em Minhas Reservas.
             </p>
             <button 
               onClick={() => navigate('/minhas-reservas')}

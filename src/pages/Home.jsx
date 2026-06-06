@@ -5,16 +5,18 @@ const Home = ({ reservas }) => {
   const [usuario, setUsuario] = useState('');
   const navigate = useNavigate();
 
-  useEffect(() => {
-    // Busca o usuário logado
+useEffect(() => {
     const userCache = localStorage.getItem('currentUser');
-    if (userCache) {
-      const parsedUser = JSON.parse(userCache);
-      setUsuario(parsedUser.name);
+    if (!userCache) {
+      navigate('/login');
+      return;
     }
-  }, []);
 
-  // Exibe as duas proximas reservas
+    const parsedUser = JSON.parse(userCache);
+    setUsuario(parsedUser.name);
+    
+  }, [navigate]);
+
   const obterProximasAulas = () => {
     if (!reservas || reservas.length === 0) return [];
     return reservas.slice(0, 2);
@@ -22,7 +24,6 @@ const Home = ({ reservas }) => {
 
   const proximasAulas = obterProximasAulas();
 
-  // Formata a data
   const formatarHorarioExibicao = (horarioStr) => {
     if (!horarioStr) return "A definir";
     if (horarioStr.includes('T')) {
