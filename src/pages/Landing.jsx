@@ -2,6 +2,13 @@ import React from "react";
 import "../styles/landing.css";
 
 const Landing = () => {
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Nossa equipe responsável entrará em contato em breve para liberar o seu teste gratuito!");
+    e.target.reset();
+  };
+
   return (
     <div className="l">
       <div className="home-container">
@@ -146,7 +153,7 @@ const Landing = () => {
               presenciais ou online.
             </p>
 
-            <form className="cta-form" onSubmit={(e) => e.preventDefault()}>
+            <form className="cta-form" onSubmit={handleSubmit}>
               <input type="text" placeholder="Seu nome completo" required />
               <input type="email" placeholder="Seu melhor e-mail" required />
               <select required defaultValue="">
