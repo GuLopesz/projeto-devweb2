@@ -15,6 +15,25 @@ function Login() {
   function handleLogin(event) {
     event.preventDefault();
 
+    if (
+      email === "admin@alivvi.com" &&
+      password === "admin123"
+    ) {
+      localStorage.setItem(
+        "currentUser",
+        JSON.stringify({
+          id: 0,
+          name: "Administrador",
+          email: "admin@alivvi.com",
+          role: "admin"
+        })
+      );
+
+
+  navigate("/home");
+  return;
+}
+
     const users =
       JSON.parse(localStorage.getItem("users")) || [];
 

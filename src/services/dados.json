@@ -168,5 +168,31 @@
         "estrelas": 5,
         "comentario": "Trabalho em home office e minha coluna estava me matando. O Alivvi foi a solução perfeita para as dores na lombar."
       }
-    ]    
+    ],
+    "instructors": [
+  {
+    "id": 1,
+    "name": "Mariana Luz",
+    "specialty": "Yoga",
+    "experience": "8 anos"
+  },
+  {
+    "id": 2,
+    "name": "Pedro Santos",
+    "specialty": "Meditação",
+    "experience": "6 anos"
+  },
+  {
+    "id": 3,
+    "name": "Carla Vieira",
+    "specialty": "Pilates Solo",
+    "experience": "5 anos"
+  },
+  {
+    "id": 4,
+    "name": "Ricardo Lima",
+    "specialty": "Orientação Nutricional",
+    "experience": "12 anos"
+  }
+]    
   }

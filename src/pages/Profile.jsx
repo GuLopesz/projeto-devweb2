@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "../styles/profile.css";
-
 
 function Profile() {
   const navigate = useNavigate();
@@ -10,9 +9,7 @@ function Profile() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const currentUser = JSON.parse(
-      localStorage.getItem("currentUser")
-    );
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
     if (!currentUser) {
       navigate("/login");
@@ -34,33 +31,66 @@ function Profile() {
 
   return (
     <>
-    <div className="profile-page">
-      <div className="profile-card">
-        <div className="profile-avatar">
-          {user.name.charAt(0).toUpperCase()}
+      <div className="profile-page">
+        <div className="profile-card">
+          <div className="profile-avatar">
+            {user.name.charAt(0).toUpperCase()}
+          </div>
+
+          <h1>{user.name}</h1>
+
+          <div className="profile-info">
+            <p>
+              <strong>Email:</strong> {user.email}
+            </p>
+
+            <p>
+              <strong>User ID:</strong> {user.id}
+            </p>
+          </div>
+
+          {user.role === "admin" && (
+            <div
+              style={{
+                marginTop: "30px",
+                padding: "20px",
+                borderRadius: "20px",
+                background: "#f8f8f8",
+                width: "100%",
+              }}
+            >
+              <h3
+                style={{
+                  color: "var(--alivvi-olive)",
+                  marginBottom: "15px",
+                }}
+              >
+                Área Administrativa
+              </h3>
+
+              <Link
+                to="/instructors"
+                style={{
+                  display: "inline-block",
+                  textDecoration: "none",
+                  background: "var(--alivvi-purple)",
+                  color: "white",
+                  padding: "12px 20px",
+                  borderRadius: "12px",
+                  fontWeight: "600",
+                }}
+              >
+                Gerenciar Instrutores
+              </Link>
+            </div>
+          )}
+
+          <button className="logout-button" onClick={handleLogout}>
+            Logout
+          </button>
         </div>
-
-        <h1>{user.name}</h1>
-
-        <div className="profile-info">
-          <p>
-            <strong>Email:</strong> {user.email}
-          </p>
-
-          <p>
-            <strong>User ID:</strong> {user.id}
-          </p>
-        </div>
-
-        <button
-          className="logout-button"
-          onClick={handleLogout}
-        >
-          Logout
-        </button>
       </div>
-    </div>
-  </>
+    </>
   );
 }
 

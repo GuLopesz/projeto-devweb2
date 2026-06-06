@@ -55,6 +55,7 @@ function Register() {
       name,
       email,
       password,
+      role: "student"
     };
 
     savedUsers.push(newUser);

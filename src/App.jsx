@@ -14,6 +14,8 @@ import Sobre from './pages/Sobre';
 import Historias from './pages/Historias';
 import ClassDetail from './pages/ClassDetail';
 import MinhasReservas from './pages/MinhasReservas';
+import InstructorManagement from "./pages/InstructorManagement";
+import AdminRoute from "./components/AdminRoute";
 
 // Importando os dados iniciais do JSON para popular o state
 import dados from './services/dados.json';
@@ -82,6 +84,12 @@ function App() {
               excluirReserva={excluirReserva} 
             />
           } />
+          <Route path="/instructors" element={
+              <AdminRoute>
+              <InstructorManagement />
+              </AdminRoute>
+              }
+          />
         </Routes>
       </main>
       <Footer />
