@@ -29,6 +29,10 @@ function Profile() {
     return null;
   }
 
+  const formattedBirthDate = user.birthDate
+    ? new Date(user.birthDate).toLocaleDateString("pt-BR")
+    : "Não informado";
+
   return (
     <>
       <div className="profile-page">
@@ -42,6 +46,25 @@ function Profile() {
           <div className="profile-info">
             <p>
               <strong>Email:</strong> {user.email}
+            </p>
+
+            <p>
+              <strong>Telefone:</strong> {user.phone}
+            </p>
+
+            <p>
+              <strong>Data de nascimento:</strong> {user.birthDate}
+            </p>
+
+            <p>
+              <strong>Nível de experiência:</strong> {user.experienceLevel}
+            </p>
+
+            <p>
+              <strong>Restrições físicas:</strong>{" "}
+              {user.physicalRestrictions
+                ? user.physicalRestrictions
+                : "Nenhuma informada"}
             </p>
 
             <p>
@@ -86,7 +109,7 @@ function Profile() {
           )}
 
           <button className="logout-button" onClick={handleLogout}>
-            Logout
+            Sair da Conta
           </button>
         </div>
       </div>

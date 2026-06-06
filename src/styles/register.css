@@ -1,125 +1,155 @@
 :root {
-    --white: #FEFEFE;
-    --dark-green: #A2A63C;
-    --light-green: #D4D948;
-    --cream: #f8f8f0;
-    --pink: #A6377F;
-  }
-  
-  .register-page {
-    min-height: 100vh;
-  
-    background:
-      linear-gradient(
-        135deg,
-        var(--cream),
-        var(--white)
-      );
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-    padding: 20px;
-  }
-  
-  .register-container {
-    width: 100%;
-    max-width: 420px;
-  
-    background-color: var(--white);
-  
-    padding: 40px;
-  
-    border-radius: 20px;
-  
-    box-shadow:
-      0 10px 30px rgba(0, 0, 0, 0.08);
-  
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
-  
-  .register-container h1 {
-    text-align: center;
-  
-    color: var(--dark-green);
-  
-    font-size: 2rem;
-  }
-  
-  .register-form {
-    display: flex;
-    flex-direction: column;
-  
-    gap: 18px;
-  }
-  
-  .register-form input {
-    padding: 14px;
-  
-    border-radius: 12px;
-  
-    border: 2px solid transparent;
-  
-    background-color: var(--cream);
-  
-    font-size: 1rem;
-  
-    transition: 0.3s ease;
-  }
-  
-  .register-form input:focus {
-    outline: none;
-  
-    border-color: var(--light-green);
-  
-    background-color: var(--white);
-  }
-  
-  .register-form button {
-    background-color: var(--pink);
-  
-    color: var(--white);
-  
-    border: none;
-  
-    padding: 14px;
-  
-    border-radius: 12px;
-  
-    font-size: 1rem;
-    font-weight: bold;
-  
-    cursor: pointer;
-  
-    transition: 0.3s ease;
-  }
-  
-  .register-form button:hover {
-    background-color: var(--dark-green);
-  
-    transform: translateY(-2px);
-  }
-  
-  .register-footer {
-    text-align: center;
-  
-    color: #666;
-  
-    font-size: 0.95rem;
-  }
-  
-  .register-footer a {
-    color: var(--pink);
-  
-    font-weight: bold;
-  }
+  --white: #fefefe;
+  --dark-green: #a2a63c;
+  --light-green: #d4d948;
+  --cream: #f8f8f0;
+  --pink: #a6377f;
+}
 
-  .error-message {
-    color: #A6377F;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-align: center;
-  }
+.register-page {
+  min-height: 100vh;
+
+  background: linear-gradient(135deg, var(--cream), var(--white));
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+}
+
+.register-container {
+  width: 100%;
+  max-width: 420px;
+
+  background-color: var(--white);
+
+  padding: 40px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.register-container h1 {
+  text-align: center;
+
+  color: var(--dark-green);
+
+  font-size: 2rem;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.register-form input {
+  padding: 14px;
+
+  border-radius: 12px;
+
+  border: 2px solid transparent;
+
+  background-color: var(--cream);
+
+  font-size: 1rem;
+
+  transition: 0.3s ease;
+}
+
+.register-form select,
+.register-form textarea {
+  padding: 14px;
+
+  border-radius: 12px;
+
+  border: 2px solid transparent;
+
+  background-color: var(--cream);
+
+  font-size: 1rem;
+
+  font-family: inherit;
+
+  transition: 0.3s ease;
+}
+
+.register-form input:focus {
+  outline: none;
+
+  border-color: var(--light-green);
+
+  background-color: var(--white);
+}
+
+.register-form select:focus,
+.register-form textarea:focus {
+  outline: none;
+
+  border-color: var(--light-green);
+
+  background-color: var(--white);
+}
+
+.register-form button {
+  background-color: var(--pink);
+
+  color: var(--white);
+
+  border: none;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.register-form button:hover {
+  background-color: var(--dark-green);
+
+  transform: translateY(-2px);
+}
+
+.register-footer {
+  text-align: center;
+
+  color: #666;
+
+  font-size: 0.95rem;
+}
+
+.register-footer a {
+  color: var(--pink);
+
+  font-weight: bold;
+}
+
+.error-message {
+  color: #a6377f;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.register-form textarea {
+  resize: vertical;
+
+  min-height: 100px;
+}
+
+.register-form select {
+  cursor: pointer;
+}
