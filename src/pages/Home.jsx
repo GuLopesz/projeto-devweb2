@@ -60,19 +60,6 @@ useEffect(() => {
         </Link>
       </div>
 
-      {/* Atalhos */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '20px', marginBottom: '50px' }}>
-        {['Yoga', 'Meditação', 'Pilates', 'Nutrição'].map(servico => (
-          <div key={servico} style={{
-            background: 'white', padding: '25px', borderRadius: '20px', textAlign: 'center',
-            border: '1px solid #eee', cursor: 'pointer', transition: '0.3s'
-          }}>
-            <div style={{ color: 'var(--alivvi-purple)', fontSize: '1.5rem', marginBottom: '10px' }}>✧</div>
-            <span style={{ fontWeight: 'bold' }}>{servico}</span>
-          </div>
-        ))}
-      </div>
-
       {/* Listagem de Aulas do Usuário */}
       <h3 style={{ marginBottom: '25px', color: 'var(--alivvi-olive)' }}>SUAS PRÓXIMAS AULAS</h3>
       

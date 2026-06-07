@@ -53,12 +53,6 @@ const Footer = () => {
               <Link to="/sobre">Quem Somos</Link>
             </li>
             <li>
-              <a href="#ajuda">Central de Ajuda</a>
-            </li>
-            <li>
-              <a href="#blog">Dicas de Saúde</a>
-            </li>
-            <li>
               <Link to="/historias">Histórias de Sucesso</Link>
             </li>
           </ul>
@@ -86,8 +80,6 @@ const Footer = () => {
       <div className="footer-bottom">
         <p>© 2026 Alivvi Bem-estar. Todos os direitos reservados.</p>
         <div className="footer-bottom-links">
-          <a href="#privacidade">Termos de Serviço</a>
-          <a href="#privacidade">Políticas de Privacidade</a>
         </div>
       </div>
     </footer>
