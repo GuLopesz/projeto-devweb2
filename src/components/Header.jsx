@@ -35,11 +35,11 @@ const Header = () => {
       </Link>
 
       <nav style={{ display: 'flex', gap: '25px', position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
-        
         <Link to={currentUser ? "/home" : "/"} className="nav-link-main">
           Início
         </Link>
         <Link to="/explorar" className="nav-link-main">Explorar</Link>
+        <Link to="/historias" className="nav-link-main">Avaliações</Link>
       </nav>
 
       {currentUser ? (
@@ -55,14 +55,14 @@ const Header = () => {
 
           {isOpen && (
             <div className="dropdown-menu">
-              <Link to="/profile" className="dropdown-item"><span>Meu perfil</span><span style={{ color: '#A6377F' }}>›</span></Link>
-              
+              <Link to="/profile" className="dropdown-item">
+                <span>Meu perfil</span>
+                <span style={{ color: '#A6377F' }}>›</span>
+              </Link>
               <Link to="/minhas-reservas" className="dropdown-item" style={{ textDecoration: 'none' }}>
                 <span style={{ color: '#333' }}>Minhas reservas</span> 
                 <span style={{ color: '#A6377F' }}>›</span>
               </Link>
-              
-              <div className="dropdown-item"><span>Indicações</span> <span style={{color: '#A6377F'}}>›</span></div>
               <hr style={{ border: '0', borderTop: '1px solid #eee', margin: '5px 0' }} />
               <div 
                 className="dropdown-item" 
