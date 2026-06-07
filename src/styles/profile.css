@@ -96,3 +96,80 @@
   
     transform: translateY(-2px);
   }
+
+.profile-edit-form {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.profile-edit-form .form-group {
+  margin-bottom: 15px;
+}
+
+.profile-edit-form label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.profile-input {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.profile-input:focus {
+  border-color: var(--alivvi-olive, #A2A63C);
+}
+
+.profile-actions {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btn-edit, .btn-save, .btn-cancel, .delete-button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+
+.btn-edit {
+  background-color: var(--alivvi-olive, #A2A63C);
+  color: white;
+}
+.btn-edit:hover { background-color: #8c9032; }
+
+.btn-save {
+  background-color: var(--alivvi-purple, #A6377F);
+  color: white;
+  flex: 2;
+}
+.btn-save:hover { background-color: #852b65; }
+
+.btn-cancel {
+  background-color: #eee;
+  color: #555;
+  flex: 1;
+}
+.btn-cancel:hover { background-color: #ddd; }
+
+.delete-button {
+  background-color: transparent;
+  border: 1px solid #ef4444;
+  color: #ef4444;
+}
+.delete-button:hover {
+  background-color: #fee2e2;
+}

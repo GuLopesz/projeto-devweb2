@@ -20,6 +20,19 @@ const Header = () => {
     setIsMobileMenuOpen(false); 
   }, [location]);
 
+  useEffect(() => {
+    const atualizarNomeHeader = () => {
+      const userCache = localStorage.getItem('currentUser');
+      setCurrentUser(userCache ? JSON.parse(userCache) : null);
+    };
+
+    window.addEventListener('userUpdate', atualizarNomeHeader);
+    
+    return () => {
+      window.removeEventListener('userUpdate', atualizarNomeHeader);
+    };
+  }, []);
+
   const handleLogout = () => {
     localStorage.removeItem('currentUser');
     setCurrentUser(null);
@@ -56,8 +69,22 @@ const Header = () => {
           onMouseLeave={() => setIsOpen(false)}
         >
           <div style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{ color: '#a6377f', fontWeight: '500' }} className="user-name-hide">{currentUser.name}</span>
-            <span style={{ fontSize: '1.1rem', color: '#a6377f' }}><i className="ri-user-line" style={{ fontSize: '1.3rem', color: '#a6377f' }}></i></span>
+            <span className="user-name-hide" style={{ color: '#a6377f', fontWeight: '500' }}>
+              <span style={{ 
+                maxWidth: '150px', 
+                whiteSpace: 'nowrap', 
+                overflow: 'hidden', 
+                textOverflow: 'ellipsis', 
+                display: 'inline-block',
+                verticalAlign: 'bottom'
+              }}>
+                {currentUser.name}
+              </span>
+            </span>
+
+            <span style={{ fontSize: '1.1rem', color: '#a6377f' }}>
+              <i className="ri-user-line" style={{ fontSize: '1.3rem', color: '#a6377f' }}></i>
+            </span>
           </div>
 
           {isOpen && (
