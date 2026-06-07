@@ -141,7 +141,15 @@ function Profile() {
         </div>
 
         {user.role === "admin" && (
-          <div style={{ marginTop: "20px", padding: "20px", borderRadius: "20px", background: "#f8f8f8", width: "100%", textAlign: "center" }}>
+          <div style={{ 
+            marginTop: "20px", 
+            padding: "20px", 
+            borderRadius: "20px", 
+            background: "#f8f8f8", 
+            width: "100%", 
+            textAlign: "center",
+            boxSizing: "border-box"
+          }}>
             <h3 style={{ color: "var(--alivvi-olive)", marginBottom: "15px" }}>Área Administrativa</h3>
             <Link to="/instructors" style={{ display: "inline-block", textDecoration: "none", background: "var(--alivvi-purple)", color: "white", padding: "12px 20px", borderRadius: "12px", fontWeight: "600" }}>
               Gerenciar Instrutores
