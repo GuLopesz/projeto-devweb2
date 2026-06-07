@@ -39,6 +39,8 @@ const Header = () => {
     navigate('/');
   };
 
+  const isActive = (path) => location.pathname === path ? 'active' : '';
+
   return (
     <header className="header-alivvi" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '15px 20px', position: 'relative' }}>
       
@@ -60,9 +62,9 @@ const Header = () => {
       </div>
 
       <nav className={`main-nav ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
-        <Link to={currentUser ? "/home" : "/"} className="nav-link-main">Início</Link>
-        <Link to="/explorar" className="nav-link-main">Explorar</Link>
-        <Link to="/historias" className="nav-link-main">Avaliações</Link>
+        <Link to={currentUser ? "/home" : "/"} className={`nav-link-main ${isActive('/home') || isActive('/')}`}>Início</Link>
+        <Link to="/explorar" className={`nav-link-main ${isActive('/explorar')}`}>Explorar</Link>
+        <Link to="/historias" className={`nav-link-main ${isActive('/historias')}`}>Avaliações</Link>
       </nav>
 
       <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
@@ -72,10 +74,10 @@ const Header = () => {
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
           >
-            <div style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span className="user-name-hide" style={{ color: '#a6377f', fontWeight: '500' }}>
+            <div className="user-chip" style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <span className="user-name-hide" style={{ color: '#a6377f', fontWeight: '600' }}>
                 <span style={{ 
-                  maxWidth: '150px', 
+                  maxWidth: '130px', 
                   whiteSpace: 'nowrap', 
                   overflow: 'hidden', 
                   textOverflow: 'ellipsis', 
@@ -86,24 +88,24 @@ const Header = () => {
                 </span>
               </span>
 
-              <span style={{ fontSize: '1.1rem', color: '#a6377f' }}>
-                <i className="ri-user-line" style={{ fontSize: '1.3rem', color: '#a6377f' }}></i>
+              <span style={{ fontSize: '1.1rem', color: '#a6377f', display: 'flex', alignItems: 'center' }}>
+                <i className="ri-user-line" style={{ fontSize: '1.3rem' }}></i>
               </span>
             </div>
 
             {isOpen && (
-              <div className="dropdown-menu" style={{ position: 'absolute', right: 0, top: '100%', background: 'white', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', borderRadius: '8px', padding: '10px', zIndex: 100 }}>
-                <Link to="/profile" className="dropdown-item" style={{ display: 'block', padding: '8px', textDecoration: 'none', color: '#333' }}>
+              <div className="dropdown-menu">
+                <Link to="/profile" className="dropdown-item">
                   Meu perfil
                 </Link>
-                <Link to="/minhas-reservas" className="dropdown-item" style={{ display: 'block', padding: '8px', textDecoration: 'none', color: '#333' }}>
+                <Link to="/minhas-reservas" className="dropdown-item">
                   Minhas reservas
                 </Link>
                 <hr style={{ border: '0', borderTop: '1px solid #eee', margin: '5px 0' }} />
                 <div 
                   className="dropdown-item" 
                   onClick={handleLogout}
-                  style={{ color: '#999', fontSize: '0.85rem', cursor: 'pointer', padding: '8px' }}
+                  style={{ color: '#999', fontSize: '0.85rem', cursor: 'pointer' }}
                 >
                   Sair
                 </div>
@@ -111,9 +113,9 @@ const Header = () => {
             )}
           </div>
         ) : (
-          <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
-            <Link to="/login" style={{ textDecoration: 'none', color: '#333', fontWeight: '500' }}>Entrar</Link>
-            <Link to="/register" style={{ textDecoration: 'none', color: '#A6377F', fontWeight: 'bold' }}>Cadastrar</Link>
+          <div style={{ display: 'flex', gap: '5px', alignItems: 'center' }}>
+            <Link to="/login" className="auth-link-entrar" style={{ textDecoration: 'none', fontWeight: '600' }}>Entrar</Link>
+            <Link to="/register" className="auth-link-cadastrar" style={{ textDecoration: 'none', fontWeight: '600' }}>Cadastrar</Link>
           </div>
         )}
       </div>
