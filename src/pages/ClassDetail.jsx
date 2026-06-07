@@ -7,6 +7,7 @@ const ClassDetail = ({ adicionarReserva, reservas }) => {
   const navigate = useNavigate();
   const [classData, setClassData] = useState(null);
   const [isBooked, setIsBooked] = useState(false);
+  const [horarioSelecionado, setHorarioSelecionado] = useState("");
 
   useEffect(() => {
     const found = dados.catalogo_explorar.find(item => item.id === Number(id));
@@ -16,7 +17,7 @@ const ClassDetail = ({ adicionarReserva, reservas }) => {
     }
     setClassData(found);
 
-    const jaReservado = reservas.some(r => r.nome === found.nome);
+    const jaReservado = reservas.some(r => r.id_aula === found.id);
     setIsBooked(jaReservado);
   }, [id, navigate, reservas]);
 
@@ -31,14 +32,20 @@ const ClassDetail = ({ adicionarReserva, reservas }) => {
       return;
     }
 
+    if (!horarioSelecionado) {
+      alert("Por favor, escolha um horário disponível antes de reservar.");
+      return;
+    }
+
     const novaReserva = {
       id: Date.now(),
       id_aula: classData.id,
       nome: classData.nome,
       categoria: classData.categoria,
       instrutor: classData.instrutor,
-      horario: "A definir",
-      imagem: classData.imagem
+      horario: horarioSelecionado,
+      imagem: classData.imagem,
+      horariosDisponiveis: classData.horariosDisponiveis
     };
 
     adicionarReserva(novaReserva);
@@ -89,16 +96,34 @@ const ClassDetail = ({ adicionarReserva, reservas }) => {
         </div>
 
         {!isBooked ? (
-          <button
-            onClick={handleReservar}
-            style={{
-              background: 'var(--alivvi-purple)', color: 'white', border: 'none',
-              padding: '16px 40px', borderRadius: '30px', fontSize: '1rem',
-              fontWeight: 'bold', cursor: 'pointer', width: '100%'
-            }}
-          >
-            Reservar Aula
-          </button>
+          <div style={{ background: '#f8f8f8', padding: '20px', borderRadius: '16px', border: '1px solid #eaeaea' }}>
+            <h3 style={{ margin: '0 0 15px 0', color: '#333' }}>Agendar Aula</h3>
+            
+            <label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold', color: '#555' }}>
+              Horários Disponíveis:
+            </label>
+            <select 
+              value={horarioSelecionado} 
+              onChange={(e) => setHorarioSelecionado(e.target.value)}
+              style={{ width: '100%', padding: '12px', borderRadius: '10px', border: '1px solid #ccc', marginBottom: '20px', fontSize: '1rem' }}
+            >
+              <option value="" disabled>Selecione um horário...</option>
+              {classData.horariosDisponiveis?.map((horario, index) => (
+                <option key={index} value={horario}>{horario}</option>
+              ))}
+            </select>
+
+            <button
+              onClick={handleReservar}
+              style={{
+                background: 'var(--alivvi-purple)', color: 'white', border: 'none',
+                padding: '16px 40px', borderRadius: '12px', fontSize: '1rem',
+                fontWeight: 'bold', cursor: 'pointer', width: '100%'
+              }}
+            >
+              Confirmar Reserva
+            </button>
+          </div>
         ) : (
           <div style={{
             background: '#f0fdf4', border: '1px solid #86efac', borderRadius: '16px',

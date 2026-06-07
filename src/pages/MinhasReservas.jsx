@@ -6,9 +6,7 @@ const MinhasReservas = ({ reservas, atualizarReserva, excluirReserva }) => {
 
   const iniciarEdicao = (reserva) => {
     setEditandoId(reserva.id);
-    
-    const formatoValidoProCalendario = reserva.horario.includes('T') ? reserva.horario : "";
-    setNovoHorario(formatoValidoProCalendario);
+    setNovoHorario(reserva.horario);
   };
 
   const salvarEdicao = (id) => {
@@ -16,15 +14,6 @@ const MinhasReservas = ({ reservas, atualizarReserva, excluirReserva }) => {
       atualizarReserva(id, novoHorario);
     }
     setEditandoId(null);
-  };
-
-  const formatarHorarioExibicao = (horarioStr) => {
-    if (horarioStr.includes('T')) {
-      const [data, hora] = horarioStr.split('T');
-      const [ano, mes, dia] = data.split('-');
-      return `${dia}/${mes}/${ano} às ${hora}`;
-    }
-    return horarioStr;
   };
 
   return (
@@ -66,15 +55,19 @@ const MinhasReservas = ({ reservas, atualizarReserva, excluirReserva }) => {
                   
                   <td style={{ padding: '15px' }}>
                     {editandoId === reserva.id ? (
-                      <input 
-                        type="datetime-local" 
+                      <select 
                         value={novoHorario} 
                         onChange={(e) => setNovoHorario(e.target.value)}
                         style={{ padding: '8px', border: '1px solid #ccc', borderRadius: '5px', width: '100%', fontFamily: 'inherit' }}
-                      />
+                      >
+                        <option value="" disabled>Selecione um horário</option>
+                        {reserva.horariosDisponiveis?.map((horario, index) => (
+                          <option key={index} value={horario}>{horario}</option>
+                        ))}
+                      </select>
                     ) : (
                       <span style={{ color: '#555' }}>
-                        {formatarHorarioExibicao(reserva.horario)}
+                        {reserva.horario}
                       </span>
                     )}
                   </td>

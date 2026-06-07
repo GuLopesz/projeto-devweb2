@@ -17,21 +17,28 @@ import MinhasReservas from './pages/MinhasReservas';
 import InstructorManagement from "./pages/InstructorManagement";
 import AdminRoute from "./components/AdminRoute";
 
-import dados from './services/dados.json';
-
 function App() {
 
   const [reservas, setReservas] = useState(() => {
     const reservasSalvas = localStorage.getItem('alivvi_reservas');
-    if (reservasSalvas) {
-      return JSON.parse(reservasSalvas);
-    }
-    return dados.usuario_logado.proximas_aulas;
+    return reservasSalvas ? JSON.parse(reservasSalvas) : [];
   });
 
   useEffect(() => {
     localStorage.setItem('alivvi_reservas', JSON.stringify(reservas));
   }, [reservas]);
+
+  useEffect(() => {
+    const syncReservas = () => {
+      const reservasSalvas = localStorage.getItem('alivvi_reservas');
+      if (reservasSalvas) {
+        setReservas(JSON.parse(reservasSalvas));
+      }
+    };
+
+    window.addEventListener('reservasUpdate', syncReservas);
+    return () => window.removeEventListener('reservasUpdate', syncReservas);
+  }, []);
 
   const adicionarReserva = (novaReserva) => {
     setReservas([...reservas, novaReserva]);
