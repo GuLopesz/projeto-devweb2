@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logoImg from '../assets/logoMenu.png';
-import '../styles/landing.css'; // Importando o CSS para manter os estilos originais
+import '../styles/landing.css'; 
 
 const Footer = () => {
   return (
@@ -26,21 +26,21 @@ const Footer = () => {
           </p>
         </div>
 
-        {/*pilares */}
+        {/*pilares*/}
         <div className="footer-col">
           <h4>Práticas</h4>
           <ul>
             <li>
-              <a href="#pilares">Aulas de Yoga</a>
+              <Link to="/explorar" state={{ category: 'Yoga' }}>Aulas de Yoga</Link>
             </li>
             <li>
-              <a href="#pilares">Meditação Guiada</a>
+              <Link to="/explorar" state={{ category: 'Meditação' }}>Meditação Guiada</Link>
             </li>
             <li>
-              <a href="#pilares">Pilates Solo</a>
+              <Link to="/explorar" state={{ category: 'Pilates solo' }}>Pilates Solo</Link>
             </li>
             <li>
-              <a href="#pilares">Planos Alimentares</a>
+              <Link to="/explorar" state={{ category: 'Orientação nutricional' }}>Planos Alimentares</Link>
             </li>
           </ul>
         </div>

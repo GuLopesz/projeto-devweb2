@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import dados from '../services/dados.json';
 import '../App.css';
@@ -7,11 +7,21 @@ import '../index.css';
 
 const Explorar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  
   const [searchTerm, setSearchTerm] = useState('');
-  const [activeCategory, setActiveCategory] = useState('Todas');
+  
+  const [activeCategory, setActiveCategory] = useState(location.state?.category || 'Todas');
+  
   const [classList, setClassList] = useState([]);
 
   const categories = ['Todas', 'Yoga', 'Meditação', 'Pilates solo', 'Orientação nutricional'];
+
+  useEffect(() => {
+    if (location.state?.category) {
+      setActiveCategory(location.state.category);
+    }
+  }, [location.state]);
 
   useEffect(() => {
     if (dados?.catalogo_explorar) {
