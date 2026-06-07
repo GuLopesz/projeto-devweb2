@@ -1,8 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import data from "../services/dados.json";
 
 const InstructorManagement = () => {
-  const [instructors, setInstructors] = useState(data.instructors);
+  const [instructors, setInstructors] = useState(() => {
+    const savedInstructors = localStorage.getItem("alivvi_instructors");
+    return savedInstructors ? JSON.parse(savedInstructors) : data.instructors;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("alivvi_instructors", JSON.stringify(instructors));
+  }, [instructors]);
 
   const [formData, setFormData] = useState({
     id: null,
