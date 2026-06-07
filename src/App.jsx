@@ -17,12 +17,10 @@ import MinhasReservas from './pages/MinhasReservas';
 import InstructorManagement from "./pages/InstructorManagement";
 import AdminRoute from "./components/AdminRoute";
 
-// Importando os dados iniciais do JSON para popular o state
 import dados from './services/dados.json';
 
 function App() {
-  // Ao iniciar, busca do Local Storage.
-  // Se não encontrar nada, puxa o padrão do JSON.
+
   const [reservas, setReservas] = useState(() => {
     const reservasSalvas = localStorage.getItem('alivvi_reservas');
     if (reservasSalvas) {
@@ -31,24 +29,20 @@ function App() {
     return dados.usuario_logado.proximas_aulas;
   });
 
-  // Ao mudar o estado 'reservas', salva automaticamente no Local Storage do navegador.
   useEffect(() => {
     localStorage.setItem('alivvi_reservas', JSON.stringify(reservas));
   }, [reservas]);
 
-  // Função CREATE
   const adicionarReserva = (novaReserva) => {
     setReservas([...reservas, novaReserva]);
   };
 
-  // Função UPDATE
   const atualizarReserva = (idReserva, novoHorario) => {
     setReservas(reservas.map(reserva => 
       reserva.id === idReserva ? { ...reserva, horario: novoHorario } : reserva
     ));
   };
 
-  // Função DELETE
   const excluirReserva = (idReserva) => {
     setReservas(reservas.filter(reserva => reserva.id !== idReserva));
   };

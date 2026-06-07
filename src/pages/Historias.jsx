@@ -17,7 +17,6 @@ const Historias = () => {
 
   const carrosselRef = useRef(null);
 
-  // Load reviews: localStorage first, fallback to JSON
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
@@ -27,13 +26,11 @@ const Historias = () => {
     }
   }, []);
 
-  // Load logged-in user
   useEffect(() => {
     const userCache = localStorage.getItem('currentUser');
     setCurrentUser(userCache ? JSON.parse(userCache) : null);
   }, []);
 
-  // Persist reviews to localStorage whenever they change
   useEffect(() => {
     if (avaliacoes.length > 0) {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(avaliacoes));
