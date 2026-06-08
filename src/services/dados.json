@@ -47,7 +47,7 @@
         "instrutor": "Beatriz Arantes",
         "duracao": "40 min",
         "nivel": "Avançado",
-        "imagem": "https://images.unsplash.com/photo-1506126279646-a6602b703d83?auto=format&fit=crop&w=400",
+        "imagem": "https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=600&q=80",
         "horariosDisponiveis": ["Terça-feira às 06:30", "Sexta-feira às 06:30"]
       },
       {
@@ -67,7 +67,7 @@
         "instrutor": "Mestre Zen Hiroshi",
         "duracao": "20 min",
         "nivel": "Todos",
-        "imagem": "https://images.unsplash.com/photo-1512438248408-1769a73e357c?auto=format&fit=crop&w=400",
+        "imagem": "https://images.pexels.com/photos/3772612/pexels-photo-3772612.jpeg?auto=compress&cs=tinysrgb&w=600",
         "horariosDisponiveis": ["Domingo às 21:00", "Segunda-feira às 22:00", "Quarta-feira às 21:30"]
       },
       {
@@ -79,8 +79,98 @@
         "nivel": "Intermediário",
         "imagem": "https://images.unsplash.com/photo-1591343395082-e120087004b4?auto=format&fit=crop&w=400",
         "horariosDisponiveis": ["Terça-feira às 18:30", "Quinta-feira às 08:00"]
-      }
-    ],
+      },
+      {
+    "id": 9,
+    "nome": "Hatha Yoga para Alívio de Ansiedade",
+    "categoria": "Yoga",
+    "instrutor": "Dra. Mariana Luz",
+    "duracao": "40 min",
+    "nivel": "Iniciante",
+    "imagem": "https://images.pexels.com/photos/1051838/pexels-photo-1051838.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "horariosDisponiveis": ["Segunda-feira às 19:00", "Quarta-feira às 19:30"]
+  },
+  {
+    "id": 10,
+    "nome": "Mindfulness: Foco e Produtividade",
+    "categoria": "Meditação",
+    "instrutor": "Prof. Pedro Santos",
+    "duracao": "15 min",
+    "nivel": "Iniciante",
+    "imagem": "https://images.pexels.com/photos/3759657/pexels-photo-3759657.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "horariosDisponiveis": ["Segunda-feira às 08:30", "Sexta-feira às 14:00"]
+  },
+  {
+    "id": 11,
+    "nome": "Pilates Core: Fortalecimento Abdominal",
+    "categoria": "Pilates solo",
+    "instrutor": "Carla Vieira",
+    "duracao": "30 min",
+    "nivel": "Avançado",
+    "imagem": "https://images.pexels.com/photos/6995493/pexels-photo-6995493.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "horariosDisponiveis": ["Quarta-feira às 07:00", "Sexta-feira às 18:00"]
+  },
+  {
+    "id": 12,
+    "nome": "Introdução ao Mindful Eating",
+    "categoria": "Orientação nutricional",
+    "instrutor": "Dra. Aline Mendes",
+    "duracao": "50 min",
+    "nivel": "Iniciante",
+    "imagem": "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "horariosDisponiveis": ["Terça-feira às 12:00", "Quinta-feira às 19:00"]
+  },
+  {
+    "id": 13,
+    "nome": "Vinyasa Flow: Força e Fluidez",
+    "categoria": "Yoga",
+    "instrutor": "Dra. Mariana Luz",
+    "duracao": "50 min",
+    "nivel": "Avançado",
+    "imagem": "https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "horariosDisponiveis": ["Terça-feira às 07:00", "Sexta-feira às 19:15"]
+  },
+  {
+    "id": 14,
+    "nome": "Meditação Guiada para Alívio do Estresse",
+    "categoria": "Meditação",
+    "instrutor": "Prof. Pedro Santos",
+    "duracao": "20 min",
+    "nivel": "Iniciante",
+    "imagem": "https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "horariosDisponiveis": ["Quarta-feira às 08:00", "Quinta-feira às 21:00"]
+  },
+  {
+    "id": 15,
+    "nome": "Pilates Solo: Alinhamento e Postura",
+    "categoria": "Pilates solo",
+    "instrutor": "Roberto Justos",
+    "duracao": "35 min",
+    "nivel": "Iniciante",
+    "imagem": "https://images.pexels.com/photos/6453398/pexels-photo-6453398.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "horariosDisponiveis": ["Segunda-feira às 10:00", "Quarta-feira às 16:30"]
+  },
+  {
+    "id": 16,
+    "nome": "Estratégias Nutricionais para Ganho de Energia",
+    "categoria": "Orientação nutricional",
+    "instrutor": "Dra. Aline Mendes",
+    "duracao": "45 min",
+    "nivel": "Intermediário",
+    "imagem": "https://images.pexels.com/photos/1128678/pexels-photo-1128678.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "horariosDisponiveis": ["Segunda-feira às 12:30", "Sexta-feira às 11:00"]
+  },
+  {
+    "id": 17,
+    "nome": "Yin Yoga: Relaxamento Profundo",
+    "categoria": "Yoga",
+    "instrutor": "Dra. Mariana Luz",
+    "duracao": "60 min",
+    "nivel": "Iniciante",
+    "imagem": "https://images.pexels.com/photos/8436608/pexels-photo-8436608.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "horariosDisponiveis": ["Quinta-feira às 20:00", "Sábado às 09:00"]
+  }
+],
     
     "avaliacoes": [
       {
